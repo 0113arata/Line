@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        main {
+            background: linear-gradient(blue, pink);
+            width: 350px;
+            height: 600px;
+            border-radius: 100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        button.Login {
+            background-color: rgb(174, 245, 168);
+            width: 100px;
+            height: 50px;
+            border-radius: 25px;
+            border: none;
+        }
+    </style>
+    <title>LINEログイン</title>
 </head>
 <body>
-  <script>
-    const idToken = liff.getIDToken();
-    document.write(idToken)
-  </script>
+    <main>
+        <button class="Login" onClick="line_login();">LINEログイン</button>
+    </main>
+
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.1.14/sdk.js"></script>
+    <script>
+    var myliffId = "1657902385-rQPalpJ4";
+    function line_login() {
+              liff
+                .init({
+                    liffId: myliffId,
+                })
+                .then(() => {
+                    //ログイン
+                    if (!liff.isLoggedIn()) {
+                            liff.login();
+                    } else {
+                            var userid = liff.getContext().userId
+                            document.getElementById('message').textContent = "ログインしました。"
+                    }
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+    }
+    //});
+    </script>
 </body>
 </html>
