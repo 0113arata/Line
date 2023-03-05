@@ -42,8 +42,11 @@
                     if (!liff.isLoggedIn()) {
                             liff.login();
                     } else {
-                            var userid = liff.getContext().userId
-                            document.getElementById('message').textContent = "ログインしました。"
+                            var user_id = liff.getContext().userId
+                            console.log('ログインしました！')
+                            console.log(user_id)
+                            const context = liff.getContext();
+                            console.log(context);
                     }
                 })
                 .catch((error) => {
