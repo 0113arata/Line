@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div.main {
+            width: 400px;
+            height: 140px;
+            margin: auto;
+            background-color: rgb(185, 224, 200);
+            border-radius: 100px;
+            text-align: center;
+        }
+
+        p.margin {
+            margin: 20px 0 0 0;
+        }
+
+        input.submit {
+            background-color: #c8c5d3;
+            border-radius: 20px;
+            width: 200px;
+            height: 30px;
+            border: none;
+        }
+    </style>
+    <title>LINE操作</title>
+</head>
+<body>
+
+    <div class="main">
+        <form action="https://script.google.com/macros/s/AKfycbwiRe99Ri85PFr-bGQhDcnABj7P8wgaEpBL6p4ol2bfXEVUb9_-SNSNdxctOu5n5Vyx/exec" method="post">
+            <p style="padding: 2px 0 0 0;"></p>
+            <p>
+                内容
+                <input type="text" name="content">
+            </p>
+    
+            <p class="margin">
+                宛先
+                <input type="text" name="name">
+            </p>
+    
+            <p class="margin">
+                <input class="submit" type="submit" value="送信">
+            </p>
+        </form>
+    </div>
+    
+</body>
+</html>
