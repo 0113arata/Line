@@ -1,0 +1,20 @@
+div.main {
+    width: 49%;
+    padding: 0 1% 2% 1%;
+    margin: auto;
+    background-color: rgb(185, 224, 200);
+    border-radius: 100px;
+    text-align: center;
+}
+
+p.title {
+    padding: 2.5% 0 0 0;
+}
+
+a.link {
+    background-color: #c8c5d3;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #4d3a8f;
+    padding: 1% 2% 1% 2%;
+}
