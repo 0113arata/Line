@@ -15,7 +15,7 @@
         }
 
         button.Login {
-            background-color: rgb(174, 245, 168);
+            background: linear-gradient(rgb(75, 90, 228), rgb(18, 240, 129));
             width: 100px;
             height: 50px;
             border-radius: 25px;
@@ -27,31 +27,31 @@
 <body>
     <main>
         <button class="Login" onClick="line_login();">LINEログイン</button>
+        <p id="message"></p>
+        <p id="user_id"></p>
     </main>
 
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.1.14/sdk.js"></script>
     <script>
     var myliffId = "1657902385-rQPalpJ4";
     function line_login() {
-              liff
-                .init({
-                    liffId: myliffId,
+        liff
+            .init({
+                liffId: myliffId,
                 })
-                .then(() => {
-                    //ログイン
-                    if (!liff.isLoggedIn()) {
-                            liff.login();
-                    } else {
-                            var user_id = liff.getContext().userId
-                            console.log('ログインしました！')
-                            console.log(user_id)
-                    }
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+            .then(() => {
+                if (!liff.isLoggedIn()) {
+                    liff.login();
+                } else {
+                    var user_id = liff.getContext().userId
+                    document.getElementById('message').textContent = 'ログインしました！'
+                    document.getElementById('user_id').textContent = user_id + "があなたのユーザーIDです。"
+                }
+            })
+            .catch((error) => {
+                document.getElementById('message').textContent = error
+            })
     }
-    //});
     </script>
 </body>
 </html>
